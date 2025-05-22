@@ -8,11 +8,6 @@ from langchain.agents.agent_toolkits import SQLDatabaseToolkit
 from sqlalchemy import create_engine
 import sqlite3
 from langchain_groq import ChatGroq
-import google_generativeai as genai
-import os
-
-from dotenv import load_dotenv
-load_dotenv()
 
 st.set_page_config(page_title="LangChain: Chat with SQL DB", page_icon="🦜")
 st.title("🦜 LangChain: Chat with SQL DB")
@@ -28,12 +23,6 @@ if radio_opt.index(selected_opt)==1:
     db_uri = MYSQL
 else:
     db_uri = LOCALDB
-
-import os
-
-API_KEY = os.getenv("GROQ_API_KEY")
-if API_KEY:
-    genai.configure(api_key=API_KEY)
 
 api_key = st.sidebar.text_input(label="Groq API Key", type="password")
 
