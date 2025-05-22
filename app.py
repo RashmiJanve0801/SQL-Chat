@@ -28,7 +28,9 @@ if radio_opt.index(selected_opt)==1:
 else:
     db_uri = LOCALDB
 
-api_key = os.getenv('GROQ_API_KEY')
+API_KEY = os.getenv("GROQ_API_KEY")
+if API_KEY:
+    genai.configure(api_key=API_KEY)
 
 api_key = st.sidebar.text_input(label="Groq API Key", type="password")
 
