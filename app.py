@@ -27,7 +27,7 @@ if radio_opt.index(selected_opt)==1:
 else:
     db_uri = LOCALDB
 
-load_api_key = os.environ('GROQ_API_KEY')
+load_api_key = os.getenv('GROQ_API_KEY')
 
 load_api_key = api_key
 api_key = st.sidebar.text_input(label="Groq API Key", type="password")
