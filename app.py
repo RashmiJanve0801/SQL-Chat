@@ -28,6 +28,8 @@ if radio_opt.index(selected_opt)==1:
 else:
     db_uri = LOCALDB
 
+import os
+
 API_KEY = os.getenv("GROQ_API_KEY")
 if API_KEY:
     genai.configure(api_key=API_KEY)
